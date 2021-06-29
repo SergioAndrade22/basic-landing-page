@@ -9,7 +9,7 @@
             @update:bounds="boundsUpdated"
         >
             <l-tile-layer :url="url"></l-tile-layer>
-            <l-marker :lat-lng="markerLatLng">
+            <l-marker :lat-lng="markerLatLng" icon-url="@/assets/maps-and-flags.png">
                 <l-tooltip :options="{ permanent: true }">{{popupText}}</l-tooltip>
             </l-marker>
         </l-map>
@@ -26,7 +26,6 @@ import { LMap, LTileLayer, LMarker, LTooltip } from 'vue2-leaflet'
 import { Icon } from 'leaflet'
 
 // The following 2 methods solve the missing marker icon
-delete Icon.Default.prototype._getIconUrl
 Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
