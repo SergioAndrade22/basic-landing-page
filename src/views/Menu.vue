@@ -3,7 +3,7 @@
         <h1>MENU</h1>
 
         <div>
-            <label for="currency-selector">
+            <label style="display: block;" for="currency-selector">
                 Currency:
 
                 <template v-if="currencies.length === 0">
@@ -17,13 +17,11 @@
                 </template>
             </label>
 
-            <div>
-                <Card
-                    title="You will surely come back!"
-                    subTitle="We have a wide range of dishes from many cultures!"
-                    text="This is the 21st century, you deserve to eat more and better!"
-                />
-            </div>
+            <b-spinner v-if="menu.length === 0" label="Loading..."></b-spinner>
+
+            <b-container v-else fluid class="d-flex">
+                <Card v-for="item in menu" :key="item.id" :item="item" :currency="selectedCurrency"/>
+            </b-container>
         </div>
     </div>
 </template>
@@ -31,8 +29,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import FamilySizeAPI from '../services/FamilySizeAPI'
-import FixerIOAPI from '../services/FixerIOAPI'
+import ExchangeAPI from '../services/ExchangeAPI'
 import Card from '../components/Card.vue'
+import Item from '@/models/Item'
 
 @Component({
   components: {
@@ -41,24 +40,23 @@ import Card from '../components/Card.vue'
 })
 export default class Menu extends Vue {
     familySizeService: FamilySizeAPI
-    fixerIOService: FixerIOAPI
-    currencies: [string, number][] = [['EUR', 1], ['USD', 1.24]]
-    selectedCurrency = ['EUR', 1]
-    loadingCurrencies = true
+    exchangeService: ExchangeAPI
+    currencies: [string, number][] = []
+    selectedCurrency = null
+    menu: Item[] = [];
 
     constructor () {
       super()
       this.familySizeService = new FamilySizeAPI()
       this.familySizeService.getMenu().then((res) => {
-        console.log(res)
+        this.menu.push(...res.menu)
       })
-      this.fixerIOService = new FixerIOAPI()
-    //   this.fixerIOService.getCurrencies().then((res) => {
-    //     this.loadingCurrencies = false
-    //     for (const rate of Object.entries(res.rates)) {
-    //       this.currencies.push(rate)
-    //     }
-    //   })
+      this.exchangeService = new ExchangeAPI()
+      this.exchangeService.getCurrencies().then((res: any) => {
+        for (const rate of Object.entries(res.conversion_rates)) {
+          this.currencies.push(rate as [string, number])
+        }
+      })
     }
 }
 </script>
