@@ -9,7 +9,7 @@
             @update:bounds="boundsUpdated"
         >
             <l-tile-layer :url="url"></l-tile-layer>
-            <l-marker :lat-lng="markerLatLng" icon-url="@/assets/maps-and-flags.png">
+            <l-marker :lat-lng="markerLatLng" :icon="icon">
                 <l-tooltip :options="{ permanent: true }">{{popupText}}</l-tooltip>
             </l-marker>
         </l-map>
@@ -23,7 +23,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { LMap, LTileLayer, LMarker, LTooltip } from 'vue2-leaflet'
-import { Icon } from 'leaflet'
+import { Icon, icon } from 'leaflet'
 
 // The following 2 methods solve the missing marker icon
 Icon.Default.mergeOptions({
@@ -46,6 +46,11 @@ export default class Map extends Vue {
     private bounds: [] = []
     private location = '2401 W Leigh St, Richmond, VA 23220, USA'
     private popupText = 'We are here!'
+    private icon = icon({
+      iconUrl: require('@/assets/maps-and-flags.png'),
+      iconSize: [32, 37],
+      iconAnchor: [16, 37]
+    })
 
     zoomUpdated (zoom: number): void {
       this.zoom = zoom
