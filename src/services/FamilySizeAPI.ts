@@ -1,3 +1,4 @@
+import Item from '@/models/Item'
 import axios from 'axios'
 
 export default class FamilySizeAPI {
@@ -6,7 +7,7 @@ export default class FamilySizeAPI {
     return res.data
   }
 
-  public async getMenuItem (id: number): Promise<[]> {
+  public async getMenuItem (id: number): Promise<{ok:boolean, item: Item}> {
     const res = await axios.get(`${process.env.VUE_APP_FAMILYSIZE}/menu/${id}`)
     return res.data
   }
