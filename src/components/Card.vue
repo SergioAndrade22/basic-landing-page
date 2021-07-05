@@ -1,14 +1,17 @@
 <template>
-  <b-card :img-src="this.item.picture ? this.item.picture : require('../assets/no-picture.png')" img-alt="Item picture" img-bottom :title="this.item.name" :sub-title="this.item.cuisine">
-    <b-card-text>{{currency ? currency[0]+": "+(this.item.cost * currency[1]).toFixed(2) : 0 }}</b-card-text>
-  </b-card>
+  <b-link class="nav-link" :to="`/menu/${this.item.id}`">
+    <b-card :img-src="this.item.picture ? this.item.picture : require('../assets/no-picture.png')" img-alt="Item picture" img-bottom :title="this.item.name" :sub-title="this.item.cuisine">
+      <b-card-text>{{currency ? currency[0]+": "+(this.item.cost * currency[1]).toFixed(2) : 0 }}</b-card-text>
+    </b-card>
+  </b-link>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { BCard, BCardTitle, BCardSubTitle, BCardText } from 'bootstrap-vue'
+import { BCard, BCardTitle, BCardSubTitle, BCardText, BLink } from 'bootstrap-vue'
 import Item from '@/models/Item'
 
+Vue.component('b-link', BLink)
 Vue.component('b-card', BCard)
 Vue.component('b-card-title', BCardTitle)
 Vue.component('b-card-sub-title', BCardSubTitle)
