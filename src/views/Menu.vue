@@ -42,16 +42,19 @@ export default class Menu extends Vue {
     familySizeService: FamilySizeAPI
     exchangeService: ExchangeAPI
     currencies: [string, number][] = []
-    selectedCurrency = null
+    selectedCurrency = ['EUR', 1]
     menu: Item[] = [];
 
     constructor () {
       super()
       this.familySizeService = new FamilySizeAPI()
+      this.exchangeService = new ExchangeAPI()
+    }
+
+    created (): void {
       this.familySizeService.getMenu().then((res) => {
         this.menu.push(...res.menu)
       })
-      this.exchangeService = new ExchangeAPI()
       this.exchangeService.getCurrencies().then((res: any) => {
         for (const rate of Object.entries(res.conversion_rates)) {
           this.currencies.push(rate as [string, number])
