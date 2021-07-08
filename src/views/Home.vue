@@ -1,18 +1,94 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div class="image-div">
+      <label class="name">Familiysize Restaurant</label>
+      <label class="mote">Portions as big as your grandma makes them!</label>
+    </div>
+    <div class="card-container">
+      <div class="card">
+        <h3>
+          Not your traditional restaurant!
+        </h3>
+        <h5>
+          We love eating, and we want to share the experience!
+        </h5>
+        Our plates get to your table as full as you will leave!
+      </div>
+
+      <div class="card">
+        <h3>
+          You will surely come back!
+        </h3>
+        <h5>
+          We have a wide range of dishes from many cultures!
+        </h5>
+        This is the 21st century, you deserve to eat more and better!
+      </div>
+
+      <div class="card">
+        <h3>
+          Affordable prices!
+        </h3>
+        <h5>
+          We have dishes for the kids and the parents alike!
+        </h5>
+        If your family doesn't enjoy the food, we failed you!
+      </div>
+
+      <div class="card">
+        <h3>
+          Every day is special if you want it!
+        </h3>
+        <h5>
+          We work hard to help you enjoy the experience!
+        </h5>
+        Friday night, birthday lunch, romantic dinner, doesn't matter!
+      </div>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
+<style lang="sass" scoped>
+label
+  display: inline-block
 
-@Component({
-  components: {
-    HelloWorld
-  }
-})
-export default class Home extends Vue {}
-</script>
+.card-container
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr))
+  gap: 1rem
+  justify-content: space-between
+  margin: 2rem
+  padding-bottom: 2rem
+
+.card
+  display: flex
+  justify-content: space-between
+  padding: 1rem .6rem
+  border: 1px solid gray
+  -webkit-box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.5)
+  -moz-box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.5)
+  box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.5)
+
+.image-div
+  font-family: "Lobster", cursive
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 100vw
+  height: 40vh
+  background-image: linear-gradient(to right bottom, rgba(2,0,36,1) 0%, rgba(63,176,182,0.3309698879551821) 39%, rgba(0,212,255,1) 100%), url('../assets/restaurant.jpg')
+  background-repeat: no-repeat
+  background-size: cover
+  background-attachment: fixed
+  background-position: center
+
+.name
+  font-size: max(3rem, 5vw)
+  font-weight: bolder
+  text-decoration: underline
+
+.mote
+  font-size: max(1.5rem, 2.75vw)
+  transform: skew(15deg) rotate(-5deg)
+</style>

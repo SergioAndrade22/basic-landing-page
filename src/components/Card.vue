@@ -33,6 +33,7 @@ img
   max-height: 15rem
   max-width: 15rem
   padding: .5rem
+  margin: 0 auto
 
 .card
   -webkit-box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.5)

@@ -19,9 +19,9 @@
 
             <b-spinner v-if="menu.length === 0" label="Loading..."></b-spinner>
 
-            <b-container v-else fluid class="d-flex">
+            <div v-else class="card-container">
                 <Card v-for="item in menu" :key="item.id" :item="item" :currency="selectedCurrency"/>
-            </b-container>
+            </div>
         </div>
     </div>
 </template>
@@ -64,6 +64,8 @@ export default class Menu extends Vue {
 }
 </script>
 
-<style>
-
+<style lang="sass" scoped>
+.card-container
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr))
 </style>

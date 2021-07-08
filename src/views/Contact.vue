@@ -30,7 +30,7 @@
                 <div class="information__field">
                     <i class="fas fa-globe social__icon"></i>
                     <p class="social__info">
-                        <span>WEBSITE: </span><b-link class="social__link" to="/">familysize.heroku.com</b-link>
+                        <span>WEBSITE: </span><a href="http://familysize-restaurant.herokuapp.com">familysize-restaurant.herokuapp.com</a>
                     </p>
                 </div>
 
@@ -131,7 +131,7 @@ export default class Contact extends Vue {
         justify-content: space-between
         background-color: var(--info)
         border-radius: 1rem
-        color: var(--gray-dark)
+        color: rgba(243,242,237,255)
 
         @media only screen and (max-width: 600px)
             top: 0

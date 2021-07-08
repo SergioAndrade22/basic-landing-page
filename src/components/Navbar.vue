@@ -16,7 +16,6 @@
             <b-navbar-nav>
                 <b-link class="nav-link" to="/">HOME</b-link>
                 <b-link class="nav-link" to="/menu">MENU</b-link>
-                <b-link class="nav-link" to="/about">ABOUT</b-link>
                 <b-link class="nav-link" to="/contact">CONTACT</b-link>
             </b-navbar-nav>
         </b-collapse>
