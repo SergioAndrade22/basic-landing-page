@@ -54,7 +54,8 @@ export default class ItemInfo extends Vue {
 
 <style lang="sass" scoped>
 img
-  max-height: 25rem
+  max-width: 30vw
+  margin: 0 auto
 
 label
   font-size: 1.3rem
@@ -68,9 +69,16 @@ label
   -webkit-box-shadow: 3px 2px 6px 5px rgba(0,0,0,0.45)
   box-shadow: 3px 2px 6px 5px rgba(0,0,0,0.45)
 
+  @media (max-width: 600px)
+    margin: 1rem auto
+    padding: 0
+
 .details
   display: flex
   justify-content: center
+
+  @media (max-width: 600px)
+    flex-direction: column
 
 .checkboxes
   display: flex
