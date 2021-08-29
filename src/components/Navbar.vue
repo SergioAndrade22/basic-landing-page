@@ -14,9 +14,15 @@
 
         <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
-                <b-link class="nav-link" to="/">HOME</b-link>
-                <b-link class="nav-link" to="/menu">MENU</b-link>
-                <b-link class="nav-link" to="/contact">CONTACT</b-link>
+                <li>
+                    <b-link class="nav-link" to="/">HOME</b-link>
+                </li>
+                <li>
+                    <b-link class="nav-link" to="/menu">MENU</b-link>
+                </li>
+                <li>
+                    <b-link class="nav-link" to="/contact">CONTACT</b-link>
+                </li>
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>

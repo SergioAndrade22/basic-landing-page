@@ -9,9 +9,9 @@
         <h3>
           Not your traditional restaurant!
         </h3>
-        <h5>
+        <p>
           We love eating, and we want to share the experience!
-        </h5>
+        </p>
         Our plates get to your table as full as you will leave!
       </div>
 
@@ -19,9 +19,9 @@
         <h3>
           You will surely come back!
         </h3>
-        <h5>
+        <p>
           We have a wide range of dishes from many cultures!
-        </h5>
+        </p>
         This is the 21st century, you deserve to eat more and better!
       </div>
 
@@ -29,9 +29,9 @@
         <h3>
           Affordable prices!
         </h3>
-        <h5>
+        <p>
           We have dishes for the kids and the parents alike!
-        </h5>
+        </p>
         If your family doesn't enjoy the food, we failed you!
       </div>
 
@@ -39,9 +39,9 @@
         <h3>
           Every day is special if you want it!
         </h3>
-        <h5>
+        <p>
           We work hard to help you enjoy the experience!
-        </h5>
+        </p>
         Friday night, birthday lunch, romantic dinner, doesn't matter!
       </div>
     </div>

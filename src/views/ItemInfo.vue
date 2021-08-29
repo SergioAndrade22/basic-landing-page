@@ -60,6 +60,12 @@ img
 label
   font-size: 1.3rem
 
+h1
+  max-width: 100vw
+
+  @media (max-width: 600px)
+    font-size: 1.8rem
+
 .main-container
   display: flex
   flex-direction: column
@@ -69,15 +75,15 @@ label
   -webkit-box-shadow: 3px 2px 6px 5px rgba(0,0,0,0.45)
   box-shadow: 3px 2px 6px 5px rgba(0,0,0,0.45)
 
-  @media (max-width: 600px)
+  @media only screen and (max-width: 600px)
     margin: 1rem auto
-    padding: 0
+    padding: 0.4rem
 
 .details
   display: flex
   justify-content: center
 
-  @media (max-width: 600px)
+  @media only screen and (max-width: 600px)
     flex-direction: column
 
 .checkboxes
